@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import SongCountTable from './components/SongCount';
+import ArtistCountTable from './components/ArtistCount';
 /* TODO IMPORT SONGCOUNT AND ARTIST COUNT COMPONENTS */
 import './App.css';
 
@@ -28,6 +29,7 @@ function App() {
   return (
     <div className="App">
       <SongCountTable data={data}/>
+      <ArtistCountTable data={data} />
     </div>
   );
 }
