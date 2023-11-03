@@ -54,7 +54,7 @@ const SongCountTable = ({ data, currentPage, itemsPerPage, onPageChange, totalPa
           ))}
         </tbody>
       </table>
-      <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={onPageChange} />
+      {/* <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={onPageChange} /> */}
     </div>
   )
 }

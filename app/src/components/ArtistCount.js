@@ -33,7 +33,7 @@ const ArtistCountTable = ({ data, currentPage, itemsPerPage, onPageChange, total
   const artistToDisplay = Object.keys(artistCounts).slice(startIndex, endIndex);
 
   return (
-    <div>
+    <div className="container">
       <h2>Artists By Count</h2>
       <table>
         <thead>
@@ -53,7 +53,7 @@ const ArtistCountTable = ({ data, currentPage, itemsPerPage, onPageChange, total
           ))}
         </tbody>
       </table>
-      <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={onPageChange} />
+      {/* <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={onPageChange} /> */}
     </div>
   )
 }
