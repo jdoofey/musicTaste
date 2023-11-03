@@ -34,7 +34,7 @@ const SongCountTable = ({ data, currentPage, itemsPerPage, onPageChange, totalPa
 
 
   return (
-    <div>
+    <div className="container">
       <h2>Songs by Count</h2>
       <table>
         <thead>

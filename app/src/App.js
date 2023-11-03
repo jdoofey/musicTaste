@@ -3,7 +3,7 @@ import SongCountTable from './components/SongCount';
 import ArtistCountTable from './components/ArtistCount';
 import Pagination from './components/Pagination';
 /* TODO IMPORT SONGCOUNT AND ARTIST COUNT COMPONENTS */
-import './App.css';
+
 
 function App() {
 
