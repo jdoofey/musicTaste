@@ -27,6 +27,11 @@ const SongCountTable = ({data}) => {
     }
   });
 
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const songsToDisplay = Object.keys(songCounts).slice(startIndex, endIndex);
+
+
   return (
     <div>
       <h2>Songs by Count</h2>
@@ -39,8 +44,8 @@ const SongCountTable = ({data}) => {
           </tr>
         </thead>
         <tbody>
-          {Object.keys(songCounts).map((songKey, i) => (
-            <tr key={i}>
+          {songsToDisplay.map((songKey, index) => (
+            <tr key={index}>
               <td>{songKey}</td>
               <td>{songCounts[songKey]}</td>
               <td>{formatTime(songTimes[songKey])}</td>
