@@ -13,7 +13,8 @@ const Pagination = ({currentPage, totalPages, onPageChange}) => {
           <button
             onClick={() => onPageChange(currentPage - 1)}
             disabled={currentPage === 1}
-          className="page-link">Previous</button>
+            className={`pagination-button ${currentPage === 1 ? 'disabled-button' : ''}`}
+          >Previous</button>
         </li>
         {pageNumbers.map((page) => (
           <li

@@ -93,3 +93,9 @@ tr:nth-child(odd) {
 .dynamic-text-color:hover {
   color: #fff;
 }
+
+.disabled-button {
+  cursor: not-allowed; /* Change cursor to not-allowed */
+  opacity: 0.5; /* Reduce opacity to indicate it's disabled */
+  pointer-events: none; /* Disable pointer events */
+}
