@@ -53,13 +53,26 @@ const ArtistCountTable = ({ data, currentPage, itemsPerPage, onPageChange, total
           </tr>
         </thead>
         <tbody>
-          {artistToDisplay.map((artistKey, index) => (
-            <tr key={index}>
+          {artistToDisplay.map((artistKey, index) => {
+            const count = artistCounts[artistKey];
+            const colorValue = Math.min(255, (count / 900) * 200); // Adjusted color value
+
+
+            const textColor = `rgb(${colorValue}, ${colorValue}, ${colorValue})`;
+            return  (
+            <tr
+              key={index}
+              className="dynamic-text-color row-hover"
+                style={{
+                  color: textColor,
+                }}
+            >
               <td>{artistKey}</td>
               <td>{artistCounts[artistKey]}</td>
               <td>{formatTime(artistTimes[artistKey])}</td>
             </tr>
-          ))}
+          )
+            })}
         </tbody>
       </table>
       {/* <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={onPageChange} /> */}

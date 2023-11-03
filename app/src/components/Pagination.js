@@ -10,7 +10,10 @@ const Pagination = ({currentPage, totalPages, onPageChange}) => {
           className={`page-item ${currentPage === 1 ? 'disabled' : ''}`}
           onClick={() => onPageChange(currentPage - 1)}
         >
-          <button className="page-link">Previous</button>
+          <button
+            onClick={() => onPageChange(currentPage - 1)}
+            disabled={currentPage === 1}
+          className="page-link">Previous</button>
         </li>
         {pageNumbers.map((page) => (
           <li
@@ -33,4 +36,3 @@ const Pagination = ({currentPage, totalPages, onPageChange}) => {
 };
 
 export default Pagination;
-

@@ -26,7 +26,7 @@ const SongCountTable = ({ data, currentPage, itemsPerPage, onPageChange, totalPa
   const songTimes = {};
 
   data.forEach((entry) => {
-    const songKey = `${entry.artistName} - ${entry.trackName}`;
+    const songKey = `${entry.songName} - ${entry.trackName}`;
 
     if (songCounts[songKey]) {
       songCounts[songKey]++
@@ -59,13 +59,27 @@ const SongCountTable = ({ data, currentPage, itemsPerPage, onPageChange, totalPa
           </tr>
         </thead>
         <tbody>
-          {songsToDisplay.map((songKey, index) => (
-            <tr key={index}>
-              <td>{songKey}</td>
-              <td>{songCounts[songKey]}</td>
-              <td>{formatTime(songTimes[songKey])}</td>
+          {songsToDisplay.map((songKey, index) => {
+            const artistName = data[songCounts[songKey]].artistName || 'Unknown Artist';
+            const trackName = data[songCounts[songKey]].trackName || 'Unknown Track';
+            const count = songCounts[songKey];
+            const colorValue = Math.min(255, (count / 100) * 150); // Adjusted color value
+
+            const textColor = `rgb(${colorValue}, ${colorValue}, ${colorValue})`;
+            const formattedSongKey = `${artistName} - ${trackName}`
+            return (
+            <tr
+              key={index}
+              className="dynamic-text-color"
+                style={{
+                  color: textColor,
+                }}
+            >
+                <td>{formattedSongKey}</td>
+                <td>{songCounts[songKey]}</td>
+                <td>{formatTime(songTimes[songKey])}</td>
             </tr>
-          ))}
+          )})}
         </tbody>
       </table>
       {/* <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={onPageChange} /> */}
