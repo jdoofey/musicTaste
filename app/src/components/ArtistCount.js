@@ -1,6 +1,7 @@
 import React from "react";
+import Pagination from './Pagination';
 
-const ArtistCountTable = ({ data }) => {
+const ArtistCountTable = ({ data, currentPage, itemsPerPage, onPageChange, totalPages }) => {
 
   const formatTime = (ms) => {
     const secs = Math.floor(ms / 1000)
@@ -52,6 +53,7 @@ const ArtistCountTable = ({ data }) => {
           ))}
         </tbody>
       </table>
+      <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={onPageChange} />
     </div>
   )
 }
