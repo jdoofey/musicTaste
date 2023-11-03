@@ -1,5 +1,4 @@
 import React from 'react'
-import Pagination from './Pagination';
 
 const SongCountTable = ({ data, currentPage, itemsPerPage, onPageChange, totalPages }) => {
 

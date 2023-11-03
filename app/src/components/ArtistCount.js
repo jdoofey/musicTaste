@@ -1,5 +1,4 @@
 import React from "react";
-import Pagination from './Pagination';
 
 const ArtistCountTable = ({ data, currentPage, itemsPerPage, onPageChange, totalPages }) => {
 
@@ -55,7 +54,7 @@ const ArtistCountTable = ({ data, currentPage, itemsPerPage, onPageChange, total
         <tbody>
           {artistToDisplay.map((artistKey, index) => {
             const count = artistCounts[artistKey];
-            const colorValue = Math.min(255, (count / 900) * 200); // Adjusted color value
+            const colorValue = Math.min(255, (count / 900) * 200); // Adjust color value
 
 
             const textColor = `rgb(${colorValue}, ${colorValue}, ${colorValue})`;

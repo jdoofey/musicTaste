@@ -27,7 +27,7 @@ function App() {
         const mergedData = dataPromises.reduce((acc, jsonData) => acc.concat(jsonData), []);
         setData(mergedData);
 
-        // Calculate song and artist counts
+
         const songCounts = {};
         const artistCounts = {};
 
@@ -46,7 +46,6 @@ function App() {
           }
         });
 
-        // Now, you can set songCounts and artistCounts in the state or use them directly as needed.
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -64,7 +63,7 @@ function App() {
         currentPage={currentSongPage}
         itemsPerPage={itemsPerPage}
         onPageChange={setCurrentSongPage}
-        totalPages={Math.ceil(Object.keys(songCounts).length / itemsPerPage)} // Pass totalPages here
+        totalPages={Math.ceil(Object.keys(songCounts).length / itemsPerPage)}
       />
       <Pagination
         currentPage={currentSongPage}
@@ -76,7 +75,7 @@ function App() {
         currentPage={currentArtistPage}
         itemsPerPage={itemsPerPage}
         onPageChange={setCurrentArtistPage}
-        totalPages={Math.ceil(Object.keys(artistCounts).length / itemsPerPage)} // Pass totalPages here
+        totalPages={Math.ceil(Object.keys(artistCounts).length / itemsPerPage)}
       />
       <Pagination
         currentPage={currentArtistPage}
